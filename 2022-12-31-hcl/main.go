@@ -8,7 +8,8 @@ import (
 
 func main() {
 	var config Config
-	err := hclsimple.DecodeFile("testdata.hcl", nil, &config)
+	ctx := NewEvalContext()
+	err := hclsimple.DecodeFile("testdata.hcl", ctx, &config)
 	if err != nil {
 		log.Fatalf("Failed to load configuration: %s", err)
 	}

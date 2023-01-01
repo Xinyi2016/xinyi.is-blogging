@@ -13,6 +13,6 @@ type ServiceConfig struct {
 }
 
 type ProcessConfig struct {
-	Type    string   `hcl:"type,label"`
-	Command []string `hcl:"command"`
+	Type    string              `hcl:"type,label"`
+	Command []map[string]string `hcl:"command"`
 }
